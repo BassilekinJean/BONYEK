@@ -10,8 +10,8 @@ interface SEOProps {
 export function SEO({ title, description, image, url }: SEOProps) {
     const siteTitle = 'BONYEK';
     const defaultDescription = "Découvrez BONYEK, votre bureau d'Etudes techniques et d'ingénierie.";
-    const defaultImage = '/og-image.jpg'; // Ensure you have a default OG image in your public folder
-    const siteUrl = 'https://bonyek.com'; // Replace with your actual domain
+    const defaultImage = '/og-image.png'; 
+    const siteUrl = 'https://bonyek.vercel.app/'; 
 
     const fullTitle = `${title} | ${siteTitle}`;
     const metaDescription = description || defaultDescription;
@@ -22,15 +22,15 @@ export function SEO({ title, description, image, url }: SEOProps) {
         <Helmet>
             {/* Standard metadata */}
             <title>{fullTitle}</title>
-            <meta name="description" content={metaDescription} />
             <link rel="canonical" href={metaUrl} />
-
-            {/* Open Graph / Facebook */}
+            
             <meta property="og:type" content="website" />
-            <meta property="og:url" content={metaUrl} />
+            <meta property="og:site_name" content="Bonyek" />
+
             <meta property="og:title" content={fullTitle} />
             <meta property="og:description" content={metaDescription} />
             <meta property="og:image" content={metaImage} />
+            <meta property="og:url" content={metaUrl} />
 
             {/* Twitter */}
             <meta property="twitter:card" content="summary_large_image" />
